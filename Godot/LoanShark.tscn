@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://k8pmxlxmlu11"]
+[gd_scene load_steps=13 format=3 uid="uid://k8pmxlxmlu11"]
 
+[ext_resource type="Texture2D" uid="uid://d3honysb4nvj8" path="res://Assets/Textures/worn_brick_floor_4k/worn_brick_floor_diff_4k.jpg" id="1_2kjct"]
 [ext_resource type="Script" path="res://SharkPlayer.gd" id="1_jj6rj"]
 [ext_resource type="PackedScene" uid="uid://bermqv43nn4k2" path="res://Assets/3D Models/thicc_happy_white_shark/scene.gltf" id="2_8wcoy"]
+[ext_resource type="Texture2D" uid="uid://b8p81pb3qtgqp" path="res://Assets/Textures/worn_brick_floor_4k/worn_brick_floor_disp_4k.png" id="2_p6kk1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hpmyg"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -18,11 +20,17 @@ background_mode = 2
 sky = SubResource("Sky_bewyg")
 tonemap_mode = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tdhec"]
-size = Vector2(75, 75)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb5dv"]
+albedo_texture = ExtResource("1_2kjct")
+normal_texture = ExtResource("2_p6kk1")
+uv1_scale = Vector3(30, 30, 30)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0yofw"]
-data = PackedVector3Array(37.5, 0, 37.5, -37.5, 0, 37.5, 37.5, 0, -37.5, -37.5, 0, 37.5, -37.5, 0, -37.5, 37.5, 0, -37.5)
+[sub_resource type="PlaneMesh" id="PlaneMesh_tdhec"]
+material = SubResource("StandardMaterial3D_xb5dv")
+size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y47gu"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4gcdn"]
 
@@ -47,10 +55,10 @@ mesh = SubResource("PlaneMesh_tdhec")
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_0yofw")
+shape = SubResource("ConcavePolygonShape3D_y47gu")
 
 [node name="SharkPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2216, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2216, 90.2588)
 script = ExtResource("1_jj6rj")
 
 [node name="Sketchfab_Scene" parent="SharkPlayer" instance=ExtResource("2_8wcoy")]
@@ -66,3 +74,7 @@ shape = SubResource("ConvexPolygonShape3D_te2yl")
 transform = Transform3D(1, 0, 0, 0, 0.800543, 0.599275, 0, -0.599275, 0.800543, 0, 8.18568, 8.74838)
 
 [node name="Camera3D" type="Camera3D" parent="SharkPlayer/Static Camera"]
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Outer Wall" type="StaticBody3D" parent="Walls"]
