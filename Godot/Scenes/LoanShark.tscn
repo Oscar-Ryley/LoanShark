@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://k8pmxlxmlu11"]
+[gd_scene load_steps=24 format=3 uid="uid://k8pmxlxmlu11"]
 
 [ext_resource type="PackedScene" uid="uid://xorj06obw81u" path="res://Scenes/SharkPlayer.tscn" id="1_qqkl6"]
 [ext_resource type="Material" uid="uid://cyk7deujb77cf" path="res://Assets/Godot Textures/Floor.tres" id="1_qv6ti"]
+[ext_resource type="PackedScene" uid="uid://f6m61388wleg" path="res://Scenes/Dino.tscn" id="1_t70wp"]
 [ext_resource type="PackedScene" uid="uid://dp7mwl6x4ihci" path="res://Scenes/Loan.tscn" id="2_de6lo"]
 [ext_resource type="Material" uid="uid://duxyn70vaghhl" path="res://Assets/Godot Textures/Wall.tres" id="4_0qoq7"]
 
@@ -20,7 +21,6 @@ background_mode = 2
 sky = SubResource("Sky_bewyg")
 tonemap_mode = 2
 glow_intensity = 4.98
-fog_enabled = true
 fog_light_color = Color(0.0817501, 0.0179981, 0.181145, 1)
 fog_light_energy = 0.6
 fog_density = 0.2
@@ -90,7 +90,12 @@ light_color = Color(0.564706, 0.784314, 0.988235, 1)
 light_energy = 0.5
 shadow_enabled = true
 
+[node name="Dino" parent="." instance=ExtResource("1_t70wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.586792, -24.8927)
+visible = false
+
 [node name="SharkPlayer" parent="." instance=ExtResource("1_qqkl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 86.6129)
 
 [node name="Node3D" parent="." instance=ExtResource("2_de6lo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996704, 64.623)
@@ -348,6 +353,123 @@ mesh = SubResource("BoxMesh_g3m6s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall28/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2ekdd")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6673, 0, 53.7489)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229416, 0, 17.6874)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6058, 0, 0.0931015)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29/Wall29/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9746, 0, 13.843)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8254, 0, -0.0977402)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5399, 0, 0.0592728)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall29" type="MeshInstance3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639473, 0, -55.3661)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29/Wall29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall30" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 19.829, 0, 44.3545)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall31" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 78.852, 0, 63.4891)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall32" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 19.9762, 0, 75.853)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall33" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5379, 0, 53.7489)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall33/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall34" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.2613, 0, 53.896)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall34/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall35" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 79.0338, 0, 75.6334)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall35/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
 
 [node name="Outer Walls" type="Node3D" parent="."]
 

@@ -13,7 +13,7 @@ size = Vector3(2, 4, 4)
 [node name="SharkPlayer" type="Node3D"]
 
 [node name="SharkPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2216, 90.2588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0175357, 0.0134277)
 script = ExtResource("1_kg5qi")
 
 [node name="Shark Model" parent="SharkPlayer" instance=ExtResource("2_tug2n")]
