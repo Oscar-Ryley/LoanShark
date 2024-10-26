@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://f6m61388wleg"]
+[gd_scene load_steps=3 format=3 uid="uid://f6m61388wleg"]
 
+[ext_resource type="Script" path="res://Scripts/Dino.gd" id="1_6c3d5"]
 [ext_resource type="PackedScene" uid="uid://c1dphfocia3xu" path="res://Assets/3D Models/animated_t-rex/scene.gltf" id="1_ksxgr"]
 
 [node name="Dino" type="Node3D"]
+script = ExtResource("1_6c3d5")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ksxgr")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.241024, 0.970519, 0, -0.970519, 0.241024, 0, 10.9048, 6.10852)

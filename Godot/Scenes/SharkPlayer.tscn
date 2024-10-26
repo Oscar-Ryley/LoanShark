@@ -21,18 +21,15 @@ transform = Transform3D(-0.988369, 0, -0.152072, 0, 1, 0, 0.152072, 0, -0.988369
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 0.0389284, 0.999242, 0, -0.999242, 0.0389284, 0.202581, 1.0577, 0.64167)
-visible = false
 shape = SubResource("CapsuleShape3D_oyls5")
 
 [node name="Static Camera" type="Node3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 0.800543, 0.599275, 0, -0.599275, 0.800543, 0, 8.18568, 8.74838)
-visible = false
 
 [node name="Camera3D" type="Camera3D" parent="SharkPlayer/Static Camera"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 1.77757, -0.33535)
-visible = false
 light_color = Color(1, 1, 0.741176, 1)
 light_energy = 40.0
 light_volumetric_fog_energy = 6.25
@@ -42,7 +39,6 @@ spot_angle = 74.61
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31171, -1.68981)
-visible = false
 light_color = Color(1, 1, 0.741176, 1)
 light_energy = 20.0
 spot_range = 18.971
@@ -51,7 +47,6 @@ spot_angle = 52.69
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 5.47708, 0.790794)
-visible = false
 light_color = Color(0.729412, 1, 1, 1)
 light_energy = 10.0
 light_volumetric_fog_energy = 6.25
@@ -61,5 +56,4 @@ spot_angle = 37.68
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SharkPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23429, 0)
-visible = false
 shape = SubResource("BoxShape3D_ohf04")
