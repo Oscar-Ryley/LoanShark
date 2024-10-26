@@ -7,25 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://dp7mwl6x4ihci" path="res://Scenes/Loan.tscn" id="2_de6lo"]
 [ext_resource type="Material" uid="uid://duxyn70vaghhl" path="res://Assets/Godot Textures/Wall.tres" id="4_0qoq7"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hpmyg"]
-sky_top_color = Color(1, 1, 1, 1)
-sky_horizon_color = Color(0.808492, 0.784259, 0.825462, 1)
-sky_energy_multiplier = 0.5
-ground_bottom_color = Color(0.233968, 0.137035, 0.301848, 1)
-ground_horizon_color = Color(0.808492, 0.784259, 0.825462, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2wusw"]
+sky_top_color = Color(0.168627, 0, 0.180392, 1)
+sky_horizon_color = Color(0.168627, 0, 0.180392, 1)
+ground_horizon_color = Color(0.584314, 0.54225, 0.567564, 1)
+energy_multiplier = 0.75
 
-[sub_resource type="Sky" id="Sky_bewyg"]
-sky_material = SubResource("ProceduralSkyMaterial_hpmyg")
+[sub_resource type="Sky" id="Sky_ndanp"]
+sky_material = SubResource("ProceduralSkyMaterial_2wusw")
 
-[sub_resource type="Environment" id="Environment_yaufr"]
+[sub_resource type="Environment" id="Environment_1w828"]
 background_mode = 2
-sky = SubResource("Sky_bewyg")
+sky = SubResource("Sky_ndanp")
 tonemap_mode = 2
-glow_intensity = 4.98
-fog_light_color = Color(0.0817501, 0.0179981, 0.181145, 1)
-fog_light_energy = 0.6
+fog_enabled = true
+fog_light_color = Color(0.168627, 0, 0.180392, 1)
+fog_light_energy = 0.5
 fog_density = 0.2
-fog_height_density = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_g3m6s"]
 material = ExtResource("4_0qoq7")
@@ -82,6 +80,9 @@ data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100,
 [node name="LoanShark" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.30854)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1w828")
+
 [node name="HUD" type="Node2D" parent="."]
 script = ExtResource("1_sovde")
 
@@ -95,9 +96,6 @@ unique_name_in_owner = true
 offset_left = 114.0
 offset_right = 248.0
 offset_bottom = 25.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yaufr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -148,6 +146,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.9679, 0.996704, -86.7876)
 
 [node name="Loan12" parent="Loans" instance=ExtResource("2_de6lo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.6704, 0.996704, -82.9205)
+
+[node name="Loan13" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.7845, 0.996704, 21.1929)
+
+[node name="Loan14" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9556, 0.996704, 58.3762)
+
+[node name="Loan15" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22148, 0.996704, -51.389)
+
+[node name="Loan16" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.9426, 0.996704, 74.1419)
+
+[node name="Loan17" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.4552, 0.996704, 53.6167)
+
+[node name="Loan18" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0948, 0.996704, -84.4079)
+
+[node name="Loan19" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6644, 0.996704, -13.9082)
+
+[node name="Loan20" parent="Loans" instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.2654, 0.996704, -43.6549)
 
 [node name="Maze Walls" type="Node3D" parent="."]
 
