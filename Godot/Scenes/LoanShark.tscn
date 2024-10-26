@@ -1,8 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://k8pmxlxmlu11"]
+[gd_scene load_steps=23 format=3 uid="uid://k8pmxlxmlu11"]
 
-[ext_resource type="Script" path="res://Scripts/SharkPlayer.gd" id="1_jj6rj"]
+[ext_resource type="PackedScene" uid="uid://xorj06obw81u" path="res://Scenes/SharkPlayer.tscn" id="1_qqkl6"]
 [ext_resource type="Material" uid="uid://cyk7deujb77cf" path="res://Assets/Godot Textures/Floor.tres" id="1_qv6ti"]
-[ext_resource type="PackedScene" uid="uid://bermqv43nn4k2" path="res://Assets/3D Models/thicc_happy_white_shark/scene.gltf" id="2_8wcoy"]
+[ext_resource type="PackedScene" uid="uid://dp7mwl6x4ihci" path="res://Scenes/Loan.tscn" id="2_de6lo"]
 [ext_resource type="Material" uid="uid://duxyn70vaghhl" path="res://Assets/Godot Textures/Wall.tres" id="4_0qoq7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hpmyg"]
@@ -20,17 +20,11 @@ background_mode = 2
 sky = SubResource("Sky_bewyg")
 tonemap_mode = 2
 glow_intensity = 4.98
+fog_enabled = true
 fog_light_color = Color(0.0817501, 0.0179981, 0.181145, 1)
 fog_light_energy = 0.6
 fog_density = 0.2
 fog_height_density = 1.0
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r55ea"]
-radius = 1.3
-height = 6.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n5il1"]
-size = Vector3(2, 4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g3m6s"]
 material = ExtResource("4_0qoq7")
@@ -96,51 +90,10 @@ light_color = Color(0.564706, 0.784314, 0.988235, 1)
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="SharkPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2216, 90.2588)
-script = ExtResource("1_jj6rj")
+[node name="SharkPlayer" parent="." instance=ExtResource("1_qqkl6")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 0.0389284, 0.999242, 0, -0.999242, 0.0389284, 0.202581, 1.0577, 0.64167)
-shape = SubResource("CapsuleShape3D_r55ea")
-
-[node name="Sketchfab_Scene" parent="SharkPlayer" instance=ExtResource("2_8wcoy")]
-transform = Transform3D(-0.988369, 0, -0.152072, 0, 1, 0, 0.152072, 0, -0.988369, 0, 0, 0)
-
-[node name="Static Camera" type="Node3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 0.800543, 0.599275, 0, -0.599275, 0.800543, 0, 8.18568, 8.74838)
-
-[node name="Camera3D" type="Camera3D" parent="SharkPlayer/Static Camera"]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 1.77757, -0.33535)
-light_color = Color(1, 1, 0.741176, 1)
-light_energy = 40.0
-light_volumetric_fog_energy = 6.25
-spot_range = 14.01
-spot_attenuation = 1.44
-spot_angle = 74.61
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31171, -1.68981)
-light_color = Color(1, 1, 0.741176, 1)
-light_energy = 20.0
-spot_range = 18.971
-spot_attenuation = -0.84
-spot_angle = 52.69
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 5.47708, 0.790794)
-light_color = Color(0.729412, 1, 1, 1)
-light_energy = 10.0
-light_volumetric_fog_energy = 6.25
-spot_range = 7.389
-spot_attenuation = 1.44
-spot_angle = 37.68
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="SharkPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23429, 0)
-shape = SubResource("BoxShape3D_n5il1")
+[node name="Node3D" parent="." instance=ExtResource("2_de6lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996704, 64.623)
 
 [node name="Maze Walls" type="Node3D" parent="."]
 
@@ -350,6 +303,51 @@ mesh = SubResource("BoxMesh_d7y0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall24/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall25" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 20.0252, 0, 5.65027)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall25/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall26" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00188498, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00188498, 19.9762, 0, 24.7783)
+mesh = SubResource("BoxMesh_d7y0s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_telkq")
+
+[node name="Wall6" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00337362, -0.0751534, -93.4759)
+mesh = SubResource("BoxMesh_g3m6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ekdd")
+
+[node name="Wall27" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00322887, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00322887, 94.9179, -0.0115471, 1.42242)
+mesh = SubResource("BoxMesh_g3m6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall27/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ekdd")
+
+[node name="Wall28" type="MeshInstance3D" parent="Maze Walls"]
+transform = Transform3D(-0.00436333, 1.04585e-09, 0.99999, -7.94946e-12, 1, -1.04589e-09, -0.99999, -1.25137e-11, -0.00436333, -95.0626, -0.560673, 1.57925)
+mesh = SubResource("BoxMesh_g3m6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maze Walls/Wall28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maze Walls/Wall28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ekdd")
 
 [node name="Outer Walls" type="Node3D" parent="."]
 
