@@ -7,6 +7,7 @@
 size = Vector3(2.81781, 6.35754, 5)
 
 [node name="Dino" type="CharacterBody3D"]
+collision_mask = 2
 script = ExtResource("1_6c3d5")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ksxgr")]

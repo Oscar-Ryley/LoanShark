@@ -20,6 +20,7 @@ sky_material = SubResource("ProceduralSkyMaterial_2wusw")
 background_mode = 2
 sky = SubResource("Sky_ndanp")
 tonemap_mode = 2
+fog_enabled = true
 fog_light_color = Color(0.168627, 0, 0.180392, 1)
 fog_light_energy = 0.5
 fog_density = 0.2
@@ -107,7 +108,7 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="Dino" parent="." instance=ExtResource("1_t70wp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346924, -0.586792, -25.2397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6396, -0.586792, -81.489)
 
 [node name="SharkPlayer" parent="." instance=ExtResource("1_qqkl6")]
 unique_name_in_owner = true
